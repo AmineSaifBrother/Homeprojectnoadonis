@@ -1,0 +1,31 @@
+local WhitelistedUserIds = {
+    ["4579132206"] = true,
+--expires after: never (me)
+    ["1326930300"] = true,
+--expires after: never (whyareublack)
+    ["972379804"] = true,
+--expires after: never (kiiaki)
+    ["3146061938"] = true,
+--expires after: never (bandos version)
+    ["4998689302"] = true,
+--expires in: march 16th (yyasou)
+    ["556209654"] = true,
+--expires in: march 10th 4pm (2real9)
+    ["4192042314"] = true,
+--expires in: never (bloodbrainbarrier)
+}
+
+local Player = game.Players.LocalPlayer
+
+local function isWhitelisted(player)
+    local userId = tostring(player.UserId)
+    return WhitelistedUserIds[userId] == true
+end
+
+if isWhitelisted(Player) then
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/AmineSaifBrother/Homeprojectnoadonis/main/antilockv1'))()
+    print("You are whitelisted")
+else
+    print("User is not whitelisted")
+   
+end
